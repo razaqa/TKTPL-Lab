@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.razaqadhafin.helloworld;
+package id.ac.ui.cs.mobileprogramming.razaqadhafin.tktplab;
 
 import org.junit.Test;
 
