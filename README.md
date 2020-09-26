@@ -11,4 +11,4 @@ Kelas	: TKTPL - A
 Lab 1 hanya berisi empty project Android Studio dimana bisa menampilkan "Hello World" jika dijalankan di AVD.<br />
 Deadline	: 21 September 2020**
 
-**sedikit update pada 21 September 2020 untuk nama project untuk menyesuaikan pengumuman perubahan codebase lab-lab selanjutnya dari asdos
+**sedikit update pada 27 September 2020 untuk nama project untuk menyesuaikan pengumuman perubahan codebase lab-lab selanjutnya dari asdos
