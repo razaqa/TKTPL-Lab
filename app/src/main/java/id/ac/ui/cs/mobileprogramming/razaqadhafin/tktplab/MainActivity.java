@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String IS_PALINDROME = "Result : PALINDROME CONFIRMED!";
+    public static final String NOT_PALINDROME = "Result : NOT A PALINDROME!";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,19 +25,19 @@ public class MainActivity extends AppCompatActivity {
         labelResult.setText(result);
     }
 
-    public String checkPalindrome(String str) {
+    public static String checkPalindrome(String str) {
         str = str.toLowerCase();
-        String resultPrefix = "Result : ";
+
         int i = 0, j = str.length() - 1;
 
         while (i < j) {
             if (str.charAt(i) != str.charAt(j))
-                return resultPrefix + "NOT A PALINDROME!";
+                return NOT_PALINDROME;
             i++;
             j--;
         }
 
-        return resultPrefix + "PALINDROME CONFIRMED!";
+        return IS_PALINDROME;
 
     }
 }
