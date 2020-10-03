@@ -2,9 +2,10 @@ package id.ac.ui.cs.mobileprogramming.razaqadhafin.tktplab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import java.util.Locale;
@@ -16,13 +17,30 @@ public class MainActivity extends AppCompatActivity {
 
     private int seconds = 0;
     private boolean running;
-    private final String LOG_TAG = "Lab 3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         runTimer();
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("TKTPLab - Lab 3")
+                .setMessage("Are you sure you want to exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 
     public void onButtonStartClicked(View view) {
@@ -57,4 +75,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
