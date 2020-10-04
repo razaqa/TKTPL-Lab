@@ -2,6 +2,7 @@ package id.ac.ui.cs.mobileprogramming.razaqadhafin.tktplab;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("onDestroy - running", Boolean.toString(running));
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
