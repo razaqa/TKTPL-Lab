@@ -27,7 +27,7 @@
         android:id="@+id/stop_button"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
         android:background="#F44336"
         android:onClick="onButtonStopClicked"
@@ -37,8 +37,7 @@
         app:layout_constraintEnd_toStartOf="@+id/reset_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/start_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintTop_toBottomOf="@+id/time_view" />
 
     <Button
         android:id="@+id/start_button"
@@ -53,8 +52,7 @@
         app:layout_constraintEnd_toStartOf="@+id/stop_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintTop_toBottomOf="@+id/time_view" />
 
     <Button
         android:id="@+id/reset_button"
@@ -70,7 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/stop_button"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintTop_toBottomOf="@+id/time_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
