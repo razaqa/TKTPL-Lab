@@ -12,3 +12,8 @@ Lab 1 hanya berisi empty project Android Studio dimana bisa menampilkan "Hello W
 Deadline	: 21 September 2020**
 
 **sedikit update pada 27 September 2020 untuk nama project untuk menyesuaikan pengumuman perubahan codebase lab-lab selanjutnya dari asdos
+
+## Lab 3
+
+Lab 3 berisi sebuah app stopwatch yang bisa di-start, stop, dan reset. Stopwatch ini akan berjalan walaupun lost focus karena di-run tidak bersamaan dengan UI Thread. Stopwatch juga diberi pop up exit confirmation ketika menekan tombol back.<br />
+Deadline	: 4 Oktober 2020
