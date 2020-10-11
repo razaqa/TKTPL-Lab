@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">TKTPLab</string>
+    <string name="app_name">TKTPLab - Lab 4</string>
+    <string name="bike_info_page_title">INFO MOTOR</string>
+    <string name="bike_list_page_title">DAFTAR MOTOR</string>
+    <string name="bike_info_name_label">Nama : </string>
+    <string name="bike_info_brand_label">Pabrikan : </string>
+    <string name="bike_info_type_label">Tipe : </string>
+    <string name="bike_info_price_label">Harga : </string>
 </resources>
