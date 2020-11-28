@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">TKTPLab</string>
+    <string name="app_name">TKTPLab - Lab 5</string>
+    <string name="app_title">Wi-Fi Scanner</string>
+    <string name="scan_button">Scan Wi-Fi</string>
+    <string name="send_button">Send Data</string>
 </resources>
