@@ -16,11 +16,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.util.List;
+import java.util.Objects;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttonScan;
+    private Button buttonSend;
     private ListView listViewWifi;
 
     private WifiManager wifiManager;
@@ -39,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         setOnButtonScanClicked();
+        setOnButtonSendClicked();
     }
 
     protected void setOnButtonScanClicked() {
@@ -53,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    protected void setOnButtonSendClicked() {
+        buttonSend.setOnClickListener(v -> {
+            sendWifiListToServer();
+        });
+    }
 
     protected boolean isPermissionsNotGranted() {
         return ActivityCompat.checkSelfPermission(
@@ -61,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                 ActivityCompat.checkSelfPermission(
                         MainActivity.this,
                         Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(
+                        MainActivity.this,
+                        Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED ||
                 ActivityCompat.checkSelfPermission(
                         MainActivity.this,
                         Manifest.permission.ACCESS_WIFI_STATE) != PackageManager.PERMISSION_GRANTED ||
@@ -73,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(
                 MainActivity.this,
                 new String[] {
+                        Manifest.permission.INTERNET,
                         Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.ACCESS_FINE_LOCATION,
                         Manifest.permission.ACCESS_WIFI_STATE,
@@ -139,5 +157,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void sendWifiListToServer() {
+        String PIPEDREAM_ENDPOINT = "https://1bab887db44e8baf390c5d336a2210aa.m.pipedream.net";
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(PIPEDREAM_ENDPOINT)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        WifiAPIInterface wifiAPI = retrofit.create(WifiAPIInterface.class);
+
+        List<WifiAPIRequest> listWifiAPIRequestData = wifiReceiver.getListWifiAPIRequestData();
+        Call<WifiAPIResponse> request = wifiAPI.sendWifiList(listWifiAPIRequestData);
+
+        request.enqueue(new Callback<WifiAPIResponse>() {
+            @Override
+            public void onResponse(Call<WifiAPIResponse> call, Response<WifiAPIResponse> response) {
+                String result = "Sending wifi data success: " + Objects.requireNonNull(response.body()).isSuccess();
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<WifiAPIResponse> call, Throwable t) {
+                String result = "Failed to send...";
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
