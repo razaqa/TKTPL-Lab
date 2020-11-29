@@ -12,3 +12,8 @@ Lab 1 hanya berisi empty project Android Studio dimana bisa menampilkan "Hello W
 Deadline	: 21 September 2020**
 
 **sedikit update pada 27 September 2020 untuk nama project untuk menyesuaikan pengumuman perubahan codebase lab-lab selanjutnya dari asdos
+
+## Lab 5
+
+Lab 5 berisi aplikasi wifi scanner yang dapat melihat semua daftar wifi yang digunakan, lalu mengirim daftar wifi tersebut dengan HTTP Request Retrofit ke sebuah endpoint API di RequestBin (Pipedream).<br />
+Deadline	: 30 November 2020
