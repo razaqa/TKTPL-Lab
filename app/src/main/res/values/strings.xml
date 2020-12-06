@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">TKTPLab</string>
+    <string name="app_name">TKTPLab - Lab 6</string>
+    <string name="text_view_app_title">Uppercase Word</string>
+    <string name="button_name">Convert!</string>
+    <string name="edit_text_name">Word</string>
+    <string name="text_view_output">OUTPUT</string>
 </resources>
