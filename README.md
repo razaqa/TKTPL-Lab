@@ -12,3 +12,8 @@ Lab 1 hanya berisi empty project Android Studio dimana bisa menampilkan "Hello W
 Deadline	: 21 September 2020**
 
 **sedikit update pada 27 September 2020 untuk nama project untuk menyesuaikan pengumuman perubahan codebase lab-lab selanjutnya dari asdos
+
+## Lab 6
+
+Lab 6 berisi aplikasi untuk mengubah text menjadi uppercase dengan menggunakan native method JNI NDK C++.<br />
+Deadline	: 7 Desember 2020
